@@ -1,0 +1,15 @@
+---
+
+import TerminalLine from './TerminalLine.astro';
+import TerminalHeader from './TerminalHeader.astro';
+
+---
+
+<div class="fixed top-0 left-0 right-0 bottom-0 m-auto bg-[#000000b0] backdrop-blur-md text-white rounded-lg font-mono text-sm w-3/4 max-w-full h-3/4 max-h-full overflow-auto whitespace-nowrap">
+  <TerminalHeader />
+  <div class="p-4">
+    <TerminalLine>whoami</TerminalLine>
+    <TerminalLine>whoami</TerminalLine>
+    <TerminalLine isLastLine>whoami</TerminalLine>
+  </div>
+</div>

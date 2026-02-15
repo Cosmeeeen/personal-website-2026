@@ -1,6 +1,8 @@
 --- 
 
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+import backgroundImage from '../assets/background.webp';
 
 ---
 
@@ -13,9 +15,16 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Cosmin Ilie - Frontend Engineer</title>
 	</head>
 	<body>
+    <Image
+      src={backgroundImage}
+      alt=""
+      fetchpriority="high"
+      loading="eager"
+      class="fixed top-0 left-0 w-full h-full object-cover -z-10"
+    />
 		<slot />
 	</body>
 </html>
