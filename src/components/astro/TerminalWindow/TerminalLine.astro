@@ -8,5 +8,7 @@ const { isLastLine = false } = Astro.props;
 --- 
 
 <p>
-  <TerminalPrefix /> <slot />{isLastLine && <BlinkingCursor />}
+  <TerminalPrefix /> 
+  <slot />
+  {isLastLine && <BlinkingCursor />}
 </p>

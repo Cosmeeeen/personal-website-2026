@@ -1,0 +1,54 @@
+--- 
+const cvData = [
+  { label: 'Role', value: 'Senior Frontend Engineer' },
+  { label: 'Company', value: '8x8' },
+  { label: 'Stack', value: 'React, TypeScript, Next.js' },
+  { label: 'Experience', value: '4.5+ Years (since Jul 2021)' },
+  { label: 'Accessibility', value: 'WCAG 2.2, ARIA, Screen Readers' },
+  { label: 'Certification', value: 'IAAP CPACC (Jan 2026)' },
+  { label: 'Philosophy', value: 'Universal Design & High Performance' },
+  { label: 'Location', value: 'Bucharest, Romania' },
+  { label: 'Education', value: 'UniBuc (CS) / UBB (Math-CS)' },
+  { label: 'Expertise', value: 'Inclusive UI Engineering' }
+];
+
+const maxLineLength = Math.max(...cvData.map(({ label, value }) => `${label}: ${value}`.length));
+
+const getRandomColor = () => {
+  const h = Math.floor(Math.random() * 360);
+  return `hsl(${h}, 70%, 70%)`;
+};
+
+--- 
+
+<div class="flex flex-row items-start gap-4">
+  <pre aria-label="ASCII art of a dog">
+    ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣄⣀⣀⣀⣀⣀⣀⣠⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⣠⠄⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠠⣄⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⣠⣾⡏⢠⣿⣿⠟⠻⣿⣿⣿⣿⣿⣿⠟⠻⣿⣿⡄⢹⣷⣄⠀⠀⠀⠀
+    ⠀⣠⣾⣿⣿⡇⢸⣿⣇⠀⠀⣸⣿⣿⣿⣿⣇⠀⠀⣸⣿⡇⢸⣿⣿⣷⣄⠀⠀
+    ⢸⣿⣿⣿⣿⡇⢸⣿⣿⣷⣾⣿⡿⠟⠻⢿⣿⣷⣾⣿⣿⡇⢸⣿⣿⣿⣿⡇⠀
+    ⠘⣿⣿⣿⣿⣷⠀⣿⣿⣿⣿⠁⠀⠀⠀⠀⠈⣿⣿⣿⣿⠀⣾⣿⣿⣿⣿⠃⠀
+    ⠀⢹⣿⣿⣿⣿⠀⠸⣿⣿⣿⣷⣄⣴⣦⣠⣾⣿⣿⣿⠇⠀⣿⣿⣿⣿⡟⠀⠀
+    ⠀⠀⠹⣿⣿⡟⠀⠀⢹⣄⠙⠛⠋⡁⢈⠙⠛⠋⣠⡍⠀⠀⢻⣿⣿⠏⠀⠀⠀
+    ⠀⠀⠀⠀⠉⠁⠀⣶⡄⠹⡆⢸⣿⡇⢸⣿⡇⢰⠏⢠⣶⠀⠈⠉⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣆⠀⠀⣿⣇⣸⣿⠀⠀⣰⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣷⠀⣿⣿⣿⣿⠀⣾⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣷⣄⣈⣁⣠⣾⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀
+  </pre>
+  <div>
+    <h1 class="text-emerald-400 font-semibold">Cosmin Ilie</h1>
+    <h2 class="text-emerald-400">Senior Frontend Engineer</h2>
+    <p>
+      {'-'.repeat(maxLineLength)}
+    </p>
+    {
+    cvData.map(({ label, value }) => (
+    <p>
+      <span style={{ color: getRandomColor() }}>{label}:</span> {value}
+    </p>
+    ))
+    }
+  </div>
+</div>
