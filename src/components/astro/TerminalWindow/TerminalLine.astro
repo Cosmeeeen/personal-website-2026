@@ -1,14 +1,12 @@
 ---
 
-import TerminalPrefix from './TerminalPrefix.astro';
-import BlinkingCursor from './BlinkingCursor.astro';
-
-const { isLastLine = false } = Astro.props;
+import { TERMINAL_PREFIX } from '../../../constants';
 
 --- 
 
 <p>
-  <TerminalPrefix /> 
+  <span class="text-green-500">
+    {TERMINAL_PREFIX}
+  </span>
   <slot />
-  {isLastLine && <BlinkingCursor />}
 </p>

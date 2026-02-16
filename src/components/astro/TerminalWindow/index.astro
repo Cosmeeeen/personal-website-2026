@@ -4,6 +4,8 @@ import TerminalLine from './TerminalLine.astro';
 import TerminalHeader from './TerminalHeader.astro';
 import DefaultText from './DefaultText.astro';
 
+import TerminalInput from '../../react/TerminalInput';
+
 ---
 
 <div 
@@ -16,6 +18,20 @@ import DefaultText from './DefaultText.astro';
     cosmin@senior-frontend-engineer.bucharest
     <TerminalLine>neofetch</TerminalLine>
     <DefaultText />
-    <TerminalLine isLastLine></TerminalLine>
+    <TerminalInput client:load />
   </div>
 </div>
+
+<script>
+
+function focusTerminalInput() {
+  const terminalInput = document.querySelector('#terminal-input') as HTMLInputElement;
+  if (terminalInput) {
+    terminalInput?.focus();
+  }
+}
+
+const terminalWindow = document.querySelector('#terminal-window');
+terminalWindow?.addEventListener('click', focusTerminalInput);
+
+</script>
